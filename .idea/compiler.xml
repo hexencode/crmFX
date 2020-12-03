@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaFXSpringBootApp" />
+        <module name="BPMonitor_springBoot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="JavaFXSpringBootApp" target="11" />
+      <module name="BPMonitor_springBoot" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

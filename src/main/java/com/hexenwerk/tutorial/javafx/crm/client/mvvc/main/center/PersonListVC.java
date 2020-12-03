@@ -1,9 +1,8 @@
 package com.hexenwerk.tutorial.javafx.crm.client.mvvc.main.center;
 
-import com.hexenwerk.tutorial.javafx.crm.ResourceBundleUtil;
 import com.hexenwerk.tutorial.javafx.crm.client.StageManager;
 import com.hexenwerk.tutorial.javafx.crm.client.ViewController;
-import com.hexenwerk.tutorial.javafx.crm.client.mvvc.login.LoginPaneVC;
+import com.hexenwerk.tutorial.javafx.crm.client.mvvc.login.LoginPaneController;
 import com.hexenwerk.tutorial.javafx.crm.client.mvvc.main.left.PersonDetailMV;
 import com.hexenwerk.tutorial.javafx.crm.service.PersonService;
 import javafx.fxml.FXML;
@@ -69,7 +68,7 @@ public class PersonListVC implements ViewController {
         personListViewModel.bind(this);
         createTableColumns();
 
-        btnLogout.setOnAction(event -> stageManager.displayScene(LoginPaneVC.class, ResourceBundleUtil.getValue("loginPane.title")));
+        btnLogout.setOnAction(event -> stageManager.displayScene(LoginPaneController.class, "Login"));
         deleteUsers.setOnAction(event -> {
             List<PersonDetailMV> users = this.tableView.getSelectionModel().getSelectedItems();
 

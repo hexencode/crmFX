@@ -1,7 +1,7 @@
 package com.hexenwerk.tutorial.javafx.crm;
 
 import com.hexenwerk.tutorial.javafx.crm.client.StageManager;
-import com.hexenwerk.tutorial.javafx.crm.client.mvvc.login.LoginPaneVC;
+import com.hexenwerk.tutorial.javafx.crm.client.mvvc.login.LoginPaneController;
 import com.hexenwerk.tutorial.javafx.crm.client.mvvc.main.center.PersonListMV;
 import com.hexenwerk.tutorial.javafx.crm.service.PersonService;
 import com.hexenwerk.tutorial.javafx.crm.service.PersonServiceImpl;
@@ -52,7 +52,7 @@ public class JavaFxRunner extends Application {
     public void start(Stage primaryStage) {
         StageManager stageManager = springAppContext.getBean(StageManager.class);
         stageManager.setPrimaryStage(primaryStage);
-        stageManager.displayScene(LoginPaneVC.class, ResourceBundleUtil.getValue("loginPane.title"));
+        stageManager.displayScene(LoginPaneController.class, "Login");
 
         PersonService personService = springAppContext.getBean(PersonServiceImpl.class);
         PersonListMV personListModelView = springAppContext.getBean(PersonListMV.class);

@@ -1,6 +1,5 @@
 package com.hexenwerk.tutorial.javafx.crm.client;
 
-import com.hexenwerk.tutorial.javafx.crm.ResourceBundleUtil;
 import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -53,7 +52,7 @@ public class StageManager {
     }
 
     public <C, V extends Node> V loadView(Class<C> controllerClass) {
-        return fxWeaver.loadView(controllerClass, ResourceBundleUtil.getResourceBundle());
+        return fxWeaver.loadView(controllerClass);
     }
 
     public Stage getPrimaryStage() {
