@@ -1,44 +1,48 @@
-# JavaFX CRUD application - User Management
+# JavaFX CRM application - User Management
 
-## Disclainer
-* The original code is forked from https://github.com/RamAlapure/JavaFXSpringBootApp.git, which is an excelend demo appliactoin about how to develop JavaFx application with Spring, JavaFx and Java 8. Author also published demo video to this tutorial [see here in youtube](https://www.youtube.com/watch?v=NQQOPy-jmhA)
-* I used this application as a template and migrated it to Spring Boot 2 with Java 11. All dependencies are provided by Maven, the application runs out of the box.
-The application frontend created using JavaFX and backend services are implemented using Spring Boot. The app demonstrate simple CRUD operation and switching between two scenes with Login and User Dashboard view. 
-* Migration to Java 11 and Spring Boot 2 was possible thanks to this tiny, yet powerful [JavaFX Weaver library](https://github.com/rgielen/javafx-weaver)
-* Thanks to both aouthors of the original application and of the JavaFX Weaver library.
+<p align="left">
+    <img src="https://img.shields.io/badge/Java-v1.11-green.svg"/>
+    <img src="https://img.shields.io/badge/JavaFX-v1.16-green.svg"/>
+    <img src="https://img.shields.io/badge/JavaFX_Weaver-v1.3.0-green.svg"/>
+    <img src="https://img.shields.io/badge/Spring Boot-v2.5.2-green.svg"/>
+    <img src="https://img.shields.io/badge/h2-v1.4.1-green.svg"/>
+    <img src="https://img.shields.io/badge/reactor_core-v3.4.7-green.svg"/>
+    <img src="https://img.shields.io/badge/reactorfx-v2.0.0-green.svg"/>
+</p>
+
+<p align="left">
+    <img src="https://img.shields.io/badge/status-UNDER CONSTRUCTION-red.svg" />
+    <img src="https://img.shields.io/badge/maintainer-hexencode-blue.svg" />
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
+</p>
+
+# Project Description
+This is a prototype of a simple JavaFX CRM application with in-memory database. The goal of this GIT repository is to create several exactly the same CRM enterprise applications with the same functionality and combined with different frameworks. I will then compare and evaluate these versions against each other
+* ease of implementation
+* performance
+* application size and the need for third-party dependencies (less is better)
+
+In this animated GIF you can see the basic functionality that must be met in all versions (listed below):
+* a login window with the ability to log in and authorize users. 
+* Communication with the database. Password and user roles are stored in the database.
+* Support for CRUD operations, i.e. create/read/update/delete user accounts
+* Support for localization, i.e. switching between languages
+* in the future I am considering implementing an HTTP REST client for communication with external services, or an AMQP client for communication with a message broker. 
 
 ![](doc/screenshot.gif)
 
-# Features
-* CRUD application - creates, reads, updates, deletes users from/into relational database (postgres in this case. Must be installed separately)
-* Supports language switching
-* Runs with Java 11+, Spring Boot 2, JavaFX weaver. 
-* Mavenized project. All dependencies are downloaded by maven
+# Current implementation
+## JavaFX + Spring + reactor
+* Migration to Java 11 and Spring Boot 2 was possible thanks to this tiny, yet powerful [JavaFX Weaver library](https://github.com/rgielen/javafx-weaver)
+* run with ```clean install spring-boot:run``` 
+* or just ring ```CrmApplication.java``` from your IDE
 
-# How to run 
-* instal postgressql DB
-* configure your DB connection in [application.properties](src/main/resources/application.properties) file
-* create new table (from any DB client)
-    ```sql
-    create table users
-    (
-        id bigserial not null
-            constraint users_pkey
-                primary key,
-        dob bytea,
-        email varchar(255),
-        first_name varchar(255),
-        gender varchar(255),
-        last_name varchar(255),
-        password varchar(255),
-        role varchar(255)
-    );
-    ```
+# Future plans
+## JavaFX + Quarkus + Mutiny
+//TODO
 
-* alter table users owner to postgres;
-    ```sql
-    INSERT INTO public.users (id, dob, email, first_name, gender, last_name, password, role) VALUES (1, '2020-04-01', 'user1@email.cz', 'Franta', 'Male', 'KomArek', 'Password1', 'Admin');
-    INSERT INTO public.users (id, dob, email, first_name, gender, last_name, password, role) VALUES (10, '2020-03-31', 'user2@email.cz', 'Sarka', 'Female', 'Zubata', 'Password2', 'User');
-    ```
+## JavaFX + JDBC + rxjava
+// TODO
 
-* run with ```clean install spring-boot:run``` or just ring MainApp.java from your IDE
+## JavaFX + JDBC, compiled into native image with GraalVM
+//TODO

@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
 @SpringBootApplication
-public class CrmApplication {
+public class CrmFxSpringApp {
 
     @Bean
     public FxWeaver fxWeaver(ConfigurableApplicationContext applicationContext) {

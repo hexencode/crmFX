@@ -42,7 +42,7 @@ public class JavaFxRunner extends Application {
         // *  all @SpringBootApplication and @Configuration classes are going to be initialized
         // *  all @Bean classes are going to be initialized. Both inside our application and libraries (most importantly @Component SpringFxWeaver)
         this.springAppContext = new SpringApplicationBuilder()
-                .sources(CrmApplication.class) // register @SpringBootApplication class
+                .sources(CrmFxSpringApp.class) // register @SpringBootApplication class
                 .initializers(initializer)
                 .run(getParameters().getRaw().toArray(new String[0])); // run with application parameters (from command line args of JavaFx parameters)
     }

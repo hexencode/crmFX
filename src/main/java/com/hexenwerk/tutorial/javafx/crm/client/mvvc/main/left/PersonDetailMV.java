@@ -91,7 +91,7 @@ public class PersonDetailMV extends AbstractModelView<Person, PersonDetailVC> {
 
         this.id.setValue(person.getId());
         this.firstName.setValue(person.getFirstName());
-        this.lastName.setValue(person.getFirstName());
+        this.lastName.setValue(person.getLastName());
         this.birthDay.setValue(person.getBirthDay());
         this.gender.setValue(person.getGender());
         this.role.setValue(person.getRole());
